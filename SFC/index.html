@@ -19,7 +19,7 @@
     </header>
 
     <section id="inicio" class="section">
-        <h1>Bienvenidos a MiEmpresa</h1>
+        <h1>Bienvenidos a Seguridad ASAG</h1>
         <p>Ofrecemos soluciones de seguridad avanzadas para proteger su hogar y negocio.</p>
         <a href="#servicios" class="btn">Ver Servicios</a>
     </section>
@@ -28,8 +28,12 @@
         <h2>Nuestros Servicios</h2>
         <ul>
             <li>📷 Instalación de Cámaras</li>
+            <P></P>
             <li>🚨 Sistemas de Alarmas</li>
+            <P></P>
             <li>⚡ Cercas Eléctricas</li>
+            <P></P>
+            <H1></H1>
             <li>📹 Videoporteros</li>
         </ul>
     </section>
@@ -37,16 +41,35 @@
     <section id="contacto" class="section">
         <h2>Contacto</h2>
         <p>Póngase en contacto con nosotros para más información.</p>
-        <form>
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Correo Electrónico" required>
-            <textarea placeholder="Mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
+        <section id="contacto" class="section">
+            <h2>Contacto</h2>
+            <p>Póngase en contacto con nosotros para más información.</p>
+            
+            <form onsubmit="sendEmail(event)">
+                <input type="text" id="name" placeholder="Nombre" required>
+                <input type="email" id="email" placeholder="Correo Electrónico" required>
+                <textarea id="message" placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    
+        <script>
+            function sendEmail(event) {
+                event.preventDefault(); // Previene el envío tradicional del formulario
+    
+                let name = document.getElementById("name").value;
+                let email = document.getElementById("email").value;
+                let message = document.getElementById("message").value;
+    
+                let mailtoLink = `mailto:asagseguridadcr@gmail.com?subject=Contacto de ${name}&body=Nombre: ${name}%0ACorreo: ${email}%0AMensaje: ${message}`;
+                
+                window.location.href = mailtoLink;
+            }
+        </script>
     </section>
 
     <footer>
-        <p>&copy; 2025 MiEmpresa - Todos los derechos reservados.</p>
+        <p>&copy; 2025 SFC SEGURIDAD</p>
     </footer>
 </body>
 </html>
